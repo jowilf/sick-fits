@@ -1,13 +1,17 @@
 <template>
-  <span class="text-brand-black">Connard !</span>
+  <div class="flex flex-col">
+    <Header></Header>
+  </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import HelloWorld from "./components/HelloWorld.vue";
+import Header from "./components/header/Header.vue";
 
 export default defineComponent({
   name: "App",
-  components: {},
+  components: {
+    Header,
+  },
 });
 </script>

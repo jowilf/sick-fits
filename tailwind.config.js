@@ -11,13 +11,12 @@ module.exports = {
         },
       },
       fontFamily: {
-        futura: "Futura, sans-serif",
-        poppins: "Poppins, sans-serif",
+        futura: "Futura",
       },
     },
   },
   variants: {
     extend: {},
   },
-  plugins: [],
+  plugins: [require("@tailwindcss/forms")],
 };

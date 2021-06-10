@@ -2,7 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer components {
+@layer base {
+  @font-face {
+    font-family: "Futura";
+    src: url("./assets/fonts/Futura_Light.ttf") format("truetype");
+    font-weight: 500;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: "Futura";
+    src: url("./assets/fonts/Futura_Light_Italic.ttf") format("truetype");
+    font-weight: 500;
+    font-style: italic;
+  }
   @font-face {
     font-family: "Futura";
     src: url("./assets/fonts/Futura_Book.ttf") format("truetype");
@@ -40,3 +52,4 @@
     font-style: italic;
   }
 }
+
