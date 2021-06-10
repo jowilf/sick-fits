@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+  .link {
+    @apply uppercase text-gray-400;
+  }
+}
 @layer base {
   @font-face {
     font-family: "Futura";
@@ -52,4 +57,3 @@
     font-style: italic;
   }
 }
-

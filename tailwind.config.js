@@ -7,7 +7,9 @@ module.exports = {
       colors: {
         brand: {
           DEFAULT: "#647a6e",
-          black: "#2c3e50",
+          light: "#97AEA2",
+          black: "#34535E",
+          dark: "#394B41",
         },
       },
       fontFamily: {
