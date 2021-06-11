@@ -11,15 +11,17 @@
       <div class="text-brand">FEATURED ITEMS</div>
       <div class="flex-grow bg-brand-light h-[2px] ml-4"></div>
     </div>
-    <div class="grid grid-cols-3 mt-2">
+    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 mt-2">
       <product :product="product" v-for="product in products" :key="product" />
     </div>
-    <div class="mt-20 flex place-content-center">
+    <div class="mt-10 flex place-content-center">
       <span
         class="
-          border border-gray-400
+          border border-gray-400f
           hover:bg-brand-light
           active:bg-brand
+          hover:text-white
+          active:text-white
           px-8
           py-1
           cursor-pointer
@@ -45,6 +47,7 @@ export default defineComponent({
         name: "Anna Blouse",
         price: "15.00",
         img: "img1.jpg",
+        label: "Best Seller",
       },
       {
         name: "Anna Blouse",
@@ -55,6 +58,7 @@ export default defineComponent({
         name: "Anna Blouse",
         price: "16.00",
         img: "img3.jpg",
+        label: "New",
       },
       {
         name: "Anna Blouse",

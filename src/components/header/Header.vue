@@ -1,7 +1,7 @@
 <template>
   <div class="flex">
     <div class="flex items-center">
-      <span class="text-3xl text-brand-dark">Logo</span>
+      <span class="text-3xl text-brand-dark">Sick Fits</span>
     </div>
     <div class="flex-grow"><span></span></div>
     <div class="flex flex-row">
