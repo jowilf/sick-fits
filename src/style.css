@@ -6,18 +6,22 @@
   .link {
     @apply uppercase text-gray-400;
   }
+
+  .sep {
+    @apply h-[1px] bg-brand-light;
+  }
 }
 @layer base {
   @font-face {
     font-family: "Futura";
     src: url("./assets/fonts/Futura_Light.ttf") format("truetype");
-    font-weight: 500;
+    font-weight: 300;
     font-style: normal;
   }
   @font-face {
     font-family: "Futura";
     src: url("./assets/fonts/Futura_Light_Italic.ttf") format("truetype");
-    font-weight: 500;
+    font-weight: 300;
     font-style: italic;
   }
   @font-face {

@@ -24,10 +24,6 @@ export default defineComponent({
     product: Object,
   },
   setup(props) {
-    const getImageURL = (img) => {
-      /* var images = require.context("../assets/", false, /\.png$/);
-      return images("./" + pet + ".png"); */
-    };
   },
 });
 </script>

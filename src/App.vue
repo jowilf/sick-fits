@@ -13,7 +13,7 @@
             >
               <li>
                 <a
-                  :class="['link', isActive && 'text-brand-dark']"
+                  :class="['link', isActive && 'text-brand-dark font-medium']"
                   :href="href"
                   @click="navigate"
                   >{{ r ?? "home" }}</a
@@ -22,6 +22,8 @@
             </router-link>
           </div>
         </ul>
+        <div class="grid grid-cols-3">
+        </div>
       </div>
       <div class="col-span-4">
         <transition>
