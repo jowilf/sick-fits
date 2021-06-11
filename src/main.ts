@@ -3,14 +3,25 @@ import { createRouter, createWebHashHistory } from "vue-router";
 import App from "./App.vue";
 import Home from "./components/home/Home.vue";
 import Shop from "./components/shop/Shop.vue";
+import ShopHome from "./components/shop/ShopHome.vue";
 import About from "./components/about/About.vue";
+import Contact from "./components/contact/Contact.vue";
+import ProductDetail from "./components/product/ProductDetail.vue";
 
 const router = createRouter({
   history: createWebHashHistory(),
   routes: [
     { path: "/", component: Home },
-    { path: "/shop", component: Shop },
+    {
+      path: "/shop",
+      component: Shop,
+      children: [
+        { path: "", component: ShopHome },
+        { path: "detail", component: ProductDetail },
+      ],
+    },
     { path: "/about", component: About },
+    { path: "/contact", component: Contact },
   ],
 });
 
