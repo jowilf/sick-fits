@@ -1,4 +1,5 @@
 import { createApp } from "vue";
+import "./style.css";
 import { createRouter, createWebHashHistory } from "vue-router";
 import App from "./App.vue";
 import Home from "./components/home/Home.vue";

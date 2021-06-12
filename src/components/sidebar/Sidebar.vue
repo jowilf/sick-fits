@@ -1,5 +1,5 @@
 <template>
-  <div class="sm:col-span-1 sm:pt-32 w-full">
+  <div class="sm:fixed sm:col-span-1 sm:pt-32 w-full">
     <div class="flex justify-end sm:hidden mb-4">
       <button
         @click="$emit('navclick')"
@@ -38,7 +38,7 @@
         </svg>
       </button>
     </div>
-    <ul>
+    <ul class="space-y-5 sm:space-y-1">
       <div
         class="flex justify-center sm:justify-start"
         v-for="r in routes"
@@ -49,7 +49,7 @@
           v-slot="{ href, navigate, isActive }"
           custom
         >
-          <li>
+          <li class="sm:text-lg text-2xl">
             <a
               :class="['link', isActive && 'text-brand-dark font-medium']"
               :href="href"
@@ -63,17 +63,18 @@
         </router-link>
       </div>
     </ul>
-    <div class="mt-10 sm:mt-20">
+    <div class="mt-20">
       <ul>
         <li
           class="
             text-brand-black
             font-medium
-            text-sm
             space-y-2
             flex
             justify-center
             sm:justify-start
+            sm:text-md
+            text-xl
           "
           v-for="other in others"
           :key="other"

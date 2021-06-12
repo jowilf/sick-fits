@@ -1,24 +1,28 @@
 <template>
-  <div class="relative flex flex-col mx-4 sm:mx-12 lg:mx-14 my-6">
+  <div class="relative">
     <Header @navclick="navclick" />
-    <div class="grid grid-cols-5 flex-grow">
-      <div class="sm:block hidden">
-        <sidebar />
+    <main>
+      <div class="flex flex-col mx-4 sm:mx-12 lg:mx-14 my-6">
+        <div class="grid grid-cols-5 flex-grow">
+          <div class="sm:block hidden">
+            <sidebar />
+          </div>
+          <div class="sm:col-span-4 col-span-5">
+            <transition>
+              <keep-alive>
+                <router-view></router-view>
+              </keep-alive>
+            </transition>
+          </div>
+        </div>
       </div>
-      <div class="sm:col-span-4 col-span-5">
-        <transition>
-          <keep-alive>
-            <router-view></router-view>
-          </keep-alive>
-        </transition>
-      </div>
-    </div>
+    </main>
     <div
       :class="[
         'absolute',
         'w-full',
-        'h-full',
-        'inset-0',
+        'h-screen',
+        'top-0',
         'bg-white',
         'flex',
         'place-content-center',
@@ -26,6 +30,8 @@
         'transition-all',
         'duration-500',
         'ease-in-out',
+        'fixed',
+        'z-50',
         open ? 'translate-x-0' : '-translate-x-full',
       ]"
       ref="mobileMenu"

@@ -33,6 +33,7 @@ export default defineComponent({
   },
   setup(props) {
     const products = ALL_PRODUCTS;
+    console.log(JSON.stringify(ALL_PRODUCTS));
     return { products };
   },
 });
