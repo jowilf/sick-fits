@@ -6,13 +6,15 @@
       <div class="flex-grow sep ml-4"></div>
     </div>
     <div class="flex justify-center">
-      <span class="max-w-sm m-10 text-brand-black">
+      <span class="max-w-sm m-5 sm:m-10 text-brand-black">
         For all order support, please include your order number and date that
         your order was placed
       </span>
     </div>
     <div class="flex justify-center text-brand-black text-sm">
-      <div class="grid sm:grid-cols-2 w-full sm:w-96 grid-cols-1 gap-2">
+      <div
+        class="grid sm:grid-cols-2 w-full mx-5 sm:w-[30rem] grid-cols-1 gap-2"
+      >
         <div class="flex flex-col space-y-1">
           <span>Enter your First Name</span>
           <input

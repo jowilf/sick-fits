@@ -1,5 +1,5 @@
 <template>
-  <div class="relative flex flex-col mx-12 lg:mx-14 my-6">
+  <div class="relative flex flex-col mx-4 sm:mx-12 lg:mx-14 my-6">
     <Header @navclick="navclick" />
     <div class="grid grid-cols-5 flex-grow">
       <div class="sm:block hidden">
@@ -17,7 +17,7 @@
       class="absolute w-full h-full inset-0 bg-white flex place-content-center"
       v-if="open"
     >
-      <sidebar />
+      <sidebar @navclick="navclick" @navclose="navclose" />
     </div>
   </div>
 </template>
@@ -39,7 +39,11 @@ export default defineComponent({
       open.value = !open.value;
       console.log("navclick" + open.value);
     };
-    return { open, navclick };
+    const navclose = () => {
+      open.value = false;
+      console.log("navclose" + open.value);
+    };
+    return { open, navclick, navclose };
   },
 });
 </script>

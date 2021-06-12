@@ -1,5 +1,43 @@
 <template>
-  <div class="sm:col-span-1 sm:pt-32">
+  <div class="sm:col-span-1 sm:pt-32 w-full">
+    <div class="flex justify-end sm:hidden mb-4">
+      <button
+        @click="$emit('navclick')"
+        type="button"
+        class="
+          inline-flex
+          items-center
+          justify-center
+          p-2
+          rounded-md
+          text-brand
+          hover:text-white
+          hover:bg-brand
+          mr-2
+          focus:outline-none
+          focus:ring-2 focus:ring-inset focus:ring-white
+        "
+        aria-controls="mobile-menu"
+        aria-expanded="false"
+      >
+        <span class="sr-only">Open main menu</span>
+        <svg
+          class="h-6 w-6"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          aria-hidden="true"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M6 18L18 6M6 6l12 12"
+          />
+        </svg>
+      </button>
+    </div>
     <ul>
       <div
         class="flex justify-center sm:justify-start"
@@ -15,7 +53,10 @@
             <a
               :class="['link', isActive && 'text-brand-dark font-medium']"
               :href="href"
-              @click="navigate"
+              @click="
+                navigate;
+                $emit('navclose');
+              "
               >{{ r ?? "home" }}</a
             >
           </li>
@@ -81,12 +122,19 @@
 </template>
 <script lang="ts">
 import { defineComponent } from "@vue/runtime-core";
+import { useRouter } from "vue-router";
 
 export default defineComponent({
+  emits: ["navclose"],
   setup(props) {
+    const router = useRouter();
     const routes = [null, "shop", "about", "contact"];
     const others = ["FAQ", "Shippings & Returns", "Store Policy", "Payments"];
-    return { routes, others };
+    const goto = (route) => {
+      router.push(route);
+      this.$emit("navclick");
+    };
+    return { routes, others, goto };
   },
 });
 </script>
