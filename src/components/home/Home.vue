@@ -89,6 +89,26 @@ export default defineComponent({
         price: "1500.00",
         img: "img6.jpg",
       },
+      {
+        name: "Anna Blouse",
+        price: "220.00",
+        img: "img7.jpg",
+      },
+      {
+        name: "Anna Blouse",
+        price: "67.00",
+        img: "img8.jpg",
+      },
+      {
+        name: "Anna Blouse",
+        price: "999.00",
+        img: "img9.jpg",
+      },
+      {
+        name: "Anna Blouse",
+        price: "499.00",
+        img: "img10.jpg",
+      },
     ];
     return { products };
   },

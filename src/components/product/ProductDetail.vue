@@ -1,10 +1,10 @@
 <template>
   <div class="flex flex-col mx-5 mt-10">
     <div class="flex justify-between">
-      <span class="font-light text-gray-500">Home / Shop / I'm Product</span>
-      <span class="text-brand"> &lt; Prev | next &gt;</span>
+      <span class="font-light text-xs lg:text-sm text-gray-500">Home / Shop / I'm Product</span>
+      <span class="text-brand hidden"> &lt; Prev | next &gt;</span>
     </div>
-    <div class="mt-10 grid grid-cols-2">
+    <div class="mt-10 grid sm:grid-cols-2">
       <div class="flex flex-col">
         <img
           src="http://localhost:8000/img10.jpg"
@@ -17,18 +17,28 @@
             object-cover object-center
           "
         />
-        <p class="text-brand-black text-sm mt-4">
+        <p class="text-brand-black text-sm mt-4 sm:block hidden">
           I’m product description. I’m great place to add more details about
           your product such as sizing, material, care instructions and cleaning
           instructions.
         </p>
       </div>
 
-      <div class="flex flex-col ml-8">
-        <span class="text-xl text-brand-black">I'm a product</span>
+      <div class="flex flex-col sm:ml-8">
+        <span class="sm:mt-0 mt-4 text-xl text-brand-black">I'm a product</span>
         <span class="text-2xl text-brand-black mt-2">$85.00</span>
+
+        <p class="text-brand-black text-sm mt-4 sm:hidden">
+          I’m product description. I’m great place to add more details about
+          your product such as sizing, material, care instructions and cleaning
+          instructions.
+        </p>
         <span class="text-gray-500 mt-4">Size</span>
-        <select class="border-gray-300 border-2 text-brand-black" name="size" id="size">
+        <select
+          class="border-gray-300 border-2 text-brand-black"
+          name="size"
+          id="size"
+        >
           <option value="small">Small</option>
           <option value="medium">Medium</option>
         </select>

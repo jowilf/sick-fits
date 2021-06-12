@@ -23,6 +23,18 @@ export default defineComponent({
     Product,
   },
   setup(props) {
+    const imgs = [
+      "https://docs.google.com/uc?export=download&id=1PM69ATaTXj-D7qmwiz2iiv_mxGBOqP_w",
+      "https://docs.google.com/uc?export=download&id=1DqSDzxYQ1kqM2A_Y6XcZ8wWwyg8FYSXk",
+      "https://docs.google.com/uc?export=download&id=1B9kqLd4ykPOzRdCxP5W7ZNwCQ4LXTutY",
+      "https://docs.google.com/uc?export=download&id=1S0UlOnTYeZiVGgtZpnhZjb9d4EAHveAU",
+      "https://docs.google.com/uc?export=download&id=1rqUQ1bgSWi4bzh20uLnq8WeHptJP7Kzm",
+      "https://docs.google.com/uc?export=download&id=124mey7q_o4Jo7FapOLm0mDgIxlpKLSTy",
+      "https://docs.google.com/uc?export=download&id=13IaLfew_j5rX3P3rxoAkYcY_7grx_RZh",
+      "https://docs.google.com/uc?export=download&id=1TMLPbAXiJ6P1ObmICG-jLVb1dH2w9mlM",
+      "https://docs.google.com/uc?export=download&id=1aeWcmP5v_w4NQXdda-kA8k61AXcV_3WG",
+      "https://docs.google.com/uc?export=download&id=1lXx8fHeG3mElRsgtXcdzpUDYbYy7eEmo",
+    ];
     const products = [
       {
         name: "Anna Blouse",
@@ -55,6 +67,26 @@ export default defineComponent({
         name: "Anna Blouse",
         price: "1500.00",
         img: "img6.jpg",
+      },
+      {
+        name: "Anna Blouse",
+        price: "220.00",
+        img: "img7.jpg",
+      },
+      {
+        name: "Anna Blouse",
+        price: "67.00",
+        img: "img8.jpg",
+      },
+      {
+        name: "Anna Blouse",
+        price: "999.00",
+        img: "img9.jpg",
+      },
+      {
+        name: "Anna Blouse",
+        price: "499.00",
+        img: "img10.jpg",
       },
     ];
     return { products };

@@ -14,8 +14,21 @@
       </div>
     </div>
     <div
-      class="absolute w-full h-full inset-0 bg-white flex place-content-center"
-      v-if="open"
+      :class="[
+        'absolute',
+        'w-full',
+        'h-full',
+        'inset-0',
+        'bg-white',
+        'flex',
+        'place-content-center',
+        'transform',
+        'transition-all',
+        'duration-500',
+        'ease-in-out',
+        open ? 'translate-x-0' : '-translate-x-full',
+      ]"
+      ref="mobileMenu"
     >
       <sidebar @navclick="navclick" @navclose="navclose" />
     </div>
@@ -23,7 +36,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref } from "vue";
+import { defineComponent, ref, watchEffect } from "vue";
 import Header from "./components/header/Header.vue";
 import Sidebar from "./components/sidebar/Sidebar.vue";
 
@@ -35,6 +48,15 @@ export default defineComponent({
   },
   setup(props) {
     const open = ref(false);
+    const mobileMenu = ref(null);
+    watchEffect(
+      () => {
+        console.log(mobileMenu.value);
+      },
+      {
+        flush: "post",
+      }
+    );
     const navclick = () => {
       open.value = !open.value;
       console.log("navclick" + open.value);
@@ -43,7 +65,7 @@ export default defineComponent({
       open.value = false;
       console.log("navclose" + open.value);
     };
-    return { open, navclick, navclose };
+    return { open, navclick, navclose, mobileMenu };
   },
 });
 </script>
