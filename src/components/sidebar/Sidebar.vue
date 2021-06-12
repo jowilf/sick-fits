@@ -125,16 +125,12 @@ import { defineComponent } from "@vue/runtime-core";
 import { useRouter } from "vue-router";
 
 export default defineComponent({
-  emits: ["navclose"],
+  emits: ["navclick", "navclose"],
   setup(props) {
     const router = useRouter();
     const routes = [null, "shop", "about", "contact"];
     const others = ["FAQ", "Shippings & Returns", "Store Policy", "Payments"];
-    const goto = (route) => {
-      router.push(route);
-      this.$emit("navclick");
-    };
-    return { routes, others, goto };
+    return { routes, others };
   },
 });
 </script>

@@ -1,13 +1,15 @@
 <template>
   <div class="flex flex-col mx-5 mt-10">
     <div class="flex justify-between">
-      <span class="font-light text-xs lg:text-sm text-gray-500">Home / Shop / I'm Product</span>
+      <span class="font-light text-xs lg:text-sm text-gray-500"
+        >Home / Shop / {{ product.name }}</span
+      >
       <span class="text-brand hidden"> &lt; Prev | next &gt;</span>
     </div>
     <div class="mt-10 grid sm:grid-cols-2">
       <div class="flex flex-col">
         <img
-          src="http://localhost:8000/img10.jpg"
+          :src="product.img"
           class="
             w-full
             h-72
@@ -18,20 +20,18 @@
           "
         />
         <p class="text-brand-black text-sm mt-4 sm:block hidden">
-          I’m product description. I’m great place to add more details about
-          your product such as sizing, material, care instructions and cleaning
-          instructions.
+          {{ product.description }}
         </p>
       </div>
 
       <div class="flex flex-col sm:ml-8">
-        <span class="sm:mt-0 mt-4 text-xl text-brand-black">I'm a product</span>
-        <span class="text-2xl text-brand-black mt-2">$85.00</span>
+        <span class="sm:mt-0 mt-4 text-xl text-brand-black">{{
+          product.name
+        }}</span>
+        <span class="text-2xl text-brand-black mt-2">${{ product.price }}</span>
 
         <p class="text-brand-black text-sm mt-4 sm:hidden">
-          I’m product description. I’m great place to add more details about
-          your product such as sizing, material, care instructions and cleaning
-          instructions.
+          {{ product.description }}
         </p>
         <span class="text-gray-500 mt-4">Size</span>
         <select
@@ -132,10 +132,18 @@
 <script  lang="ts">
 import { defineComponent } from "@vue/runtime-core";
 import { ref } from "vue";
+import { ProductObject } from "./product";
 
 export default defineComponent({
+  props: {
+    product: {
+      type: ProductObject,
+      required: true,
+    },
+  },
   setup(props) {
     const isLike = ref(true);
+    console.log(props);
     return { isLike };
   },
 });

@@ -12,6 +12,9 @@
   }
 }
 @layer base {
+  img {
+    @apply placeholder-gray-200;
+  }
   @font-face {
     font-family: "Futura";
     src: url("./assets/fonts/Futura_Light.ttf") format("truetype");

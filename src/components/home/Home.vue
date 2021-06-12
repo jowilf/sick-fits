@@ -11,7 +11,7 @@
           object-cover object-right
           rounded-md
         "
-        src="http://localhost:8000/img3.jpg"
+        src="https://docs.google.com/uc?export=download&id=1TMLPbAXiJ6P1ObmICG-jLVb1dH2w9mlM"
       />
     </div>
     <div class="flex place-items-center mt-6">
@@ -22,7 +22,11 @@
     <div
       class="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 mt-2"
     >
-      <product :product="product" v-for="product in products" :key="product" />
+      <product
+        :product="product"
+        v-for="product in products"
+        :key="product.id"
+      />
     </div>
     <div class="mt-10 flex place-content-center">
       <router-link to="/shop" v-slot="{ href, navigate }" custom>
@@ -49,6 +53,7 @@
 <script lang="ts">
 import { defineComponent } from "@vue/runtime-core";
 import Product from "../product/Product.vue";
+import {  ALL_PRODUCTS } from "../product/product";
 
 export default defineComponent({
   name: "Home",
@@ -56,60 +61,7 @@ export default defineComponent({
     Product,
   },
   setup(props) {
-    const products = [
-      {
-        name: "Anna Blouse",
-        price: "15.00",
-        img: "img1.jpg",
-        label: "Best Seller",
-      },
-      {
-        name: "Anna Blouse",
-        price: "115.00",
-        img: "img2.jpg",
-      },
-      {
-        name: "Anna Blouse",
-        price: "16.00",
-        img: "img3.jpg",
-        label: "New",
-      },
-      {
-        name: "Anna Blouse",
-        price: "55.00",
-        img: "img4.jpg",
-      },
-      {
-        name: "Anna Blouse",
-        price: "39.00",
-        img: "img5.jpg",
-      },
-      {
-        name: "Anna Blouse",
-        price: "1500.00",
-        img: "img6.jpg",
-      },
-      {
-        name: "Anna Blouse",
-        price: "220.00",
-        img: "img7.jpg",
-      },
-      {
-        name: "Anna Blouse",
-        price: "67.00",
-        img: "img8.jpg",
-      },
-      {
-        name: "Anna Blouse",
-        price: "999.00",
-        img: "img9.jpg",
-      },
-      {
-        name: "Anna Blouse",
-        price: "499.00",
-        img: "img10.jpg",
-      },
-    ];
+    const products = ALL_PRODUCTS;
     return { products };
   },
 });

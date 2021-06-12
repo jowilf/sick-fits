@@ -107,6 +107,6 @@ export default defineComponent({
   components: {
     Sidebar,
   },
-  emits: ["nav"],
+  emits: ["navclick"],
 });
 </script>

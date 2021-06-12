@@ -7,12 +7,12 @@
         >{{ product.label }}</span
       >
       <img
-        :src="'http://localhost:8000/' + product.img"
+        :src="product.img"
         class="h-72 w-full object-cover object-center rounded-sm"
       />
     </div>
-    <div class="text-brand-black text-sm mt-2">{{ product.name }}</div>
-    <div class="text-brand-black mt-2">${{ product.price }}</div>
+    <div class="text-brand-black text-sm mt-2 text-center">{{ product.name }}</div>
+    <div class="text-brand-black mt-2 font-medium">${{ product.price }}</div>
     <div
       class="
         absolute
@@ -30,16 +30,23 @@
 <script  lang="ts">
 import { defineComponent } from "@vue/runtime-core";
 import { useRoute, useRouter } from "vue-router";
-
+import { ProductObject } from "./product";
+import ProductDetailVue from "./ProductDetail.vue";
 export default defineComponent({
   name: "Product",
   props: {
-    product: Object,
+    product: {
+      type: ProductObject,
+      required: true,
+    },
   },
   setup(props) {
     const router = useRouter();
     const gotoDetail = () => {
-      router.push("/shop/detail");
+      router.push({
+        name: "ProductDetail",
+        params: { value: JSON.stringify(props.product) },
+      });
     };
     return { gotoDetail };
   },

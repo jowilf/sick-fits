@@ -17,7 +17,14 @@ const router = createRouter({
       component: Shop,
       children: [
         { path: "", component: ShopHome },
-        { path: "detail", component: ProductDetail },
+        {
+          path: "detail",
+          name: "ProductDetail",
+          component: ProductDetail,
+          props: (route) => ({
+            product: JSON.parse(route.params.value.toString()),
+          }),
+        },
       ],
     },
     { path: "/about", component: About },

@@ -19,12 +19,12 @@
             rounded-sm
             object-cover object-center
           "
-          src="http://localhost:8000/img7.jpg"
+          src="https://docs.google.com/uc?export=download&id=1S0UlOnTYeZiVGgtZpnhZjb9d4EAHveAU"
         />
       </div>
       <img
         class="w-32 h-48 xs:w-52 xs:h-64 rounded-sm object-cover object-center"
-        src="http://localhost:8000/img10.jpg"
+        src="https://docs.google.com/uc?export=download&id=1PM69ATaTXj-D7qmwiz2iiv_mxGBOqP_w"
       />
     </div>
     <p
